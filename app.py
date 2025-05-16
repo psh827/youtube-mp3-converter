@@ -56,4 +56,5 @@ def download(filename):
     return f"<h3>서버에서 직접 다운로드는 구현 생략됨</h3>"
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 10000))  # Render가 PORT 환경변수로 포트 지정함
+    app.run(host="0.0.0.0", port=port)
